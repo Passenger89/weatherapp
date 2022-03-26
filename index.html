@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="card">
+        <div class="info-container"></div>
+        <div class="table-container">
+          <table class="details"></table>
+        </div>
+        <button class="btn btn-location">Change Location</button>
+      </div>
+    </div>
+    <div class="modal">
+    	<input name="city" list="cities" id="input-cities"/>
+    	<datalist name="city" id="cities"></datalist>
+    	<input name="country" list="countries" id="input-countries"/>
+    	<datalist name="country" id="countries"></datalist>
+    </div>
+
+    <script type="module" src="./src/scripts/app.js"></script>
+    <script type="module" src="./src/scripts/modal.js"></script>
+  </body>
+</html>
