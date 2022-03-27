@@ -1,6 +1,8 @@
+import KEY from "./apiKey.js";
+
 class OpenWeatherApi {
 	constructor() {
-		this.appId = 'c777d34d28ab3ed8959a950a7a6065a4'
+		this.appId = KEY
 		this.limit = 1
 	}
 
@@ -32,9 +34,3 @@ class OpenWeatherApi {
 
 
 export default OpenWeatherApi
-
-
-
-// api key - c777d34d28ab3ed8959a950a7a6065a4
-
-// api docs - https://openweathermap.org/current
