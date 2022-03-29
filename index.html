@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/reset.css" />
-    <link rel="stylesheet" href="./src/styles/styles.css" />
-    <title>Weather App</title>
-  </head>
-  <body>
-    <div class="app-container">
-      <div class="card">
-        <div class="info-container"></div>
-        <div class="table-container">
-          <table class="details"></table>
-        </div>
-        <button class="btn btn-location">Change Location</button>
-      </div>
-    </div>
-    <div class="modal">
-    	<input name="city" list="cities" id="input-cities"/>
-    	<datalist name="city" id="cities"></datalist>
-    	<input name="country" list="countries" id="input-countries"/>
-    	<datalist name="country" id="countries"></datalist>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./src/styles/reset.css" />
+		<link rel="stylesheet" href="./src/styles/styles.css" />
+		<title>Weather App</title>
+	</head>
+	<body>
+		<div class="app-container">
+			<div class="card">
+				<div class="info-container">
+					<h1 id='location'></h1>
+					<h3 id="description"></h3>
+					<h3 id="temperature"></h3>
+					<img id="icon" src="" alt="">
+				</div>
 
-    <script type="module" src="./src/scripts/app.js"></script>
-    <script type="module" src="./src/scripts/modal.js"></script>
-  </body>
+				<div class="table-container">
+					<table class="details">
+						<tr>
+							<td>Feels Like</td>
+							<td id="feels-like"></td>
+						</tr>
+						<tr>
+							<td>Visibility</td>
+							<td id="visibility"></td>
+						</tr>
+						<tr>
+							<td>Wind Direction</td>
+							<td id="wind-direction"></td>
+						</tr>
+						<tr>
+							<td>Wind Speed</td>
+							<td id="wind-speed"></td>
+						</tr>
+					</table>
+				</div>
+
+				<button class="btn btn-location">Change Location</button>
+			</div>
+		</div>
+
+		<div class="modal">
+			<form class="form" data-location-form>
+				<div class="modal__btn-close">&times</div>
+				<div class="field-set">	
+				<div class="modal__field">
+					
+				<label for="cities">Choose a city</label>
+				<input name="city" list="cities" id="input-cities" placeholder="City" />
+				<datalist name="city" id="cities"></datalist>
+				</div>
+				<div class="modal__field">
+					
+				<label for="countries">Choose a country</label>
+				<input name="country" list="countries" id="input-countries" placeholder="Country" />
+				<datalist name="country" id="countries"></datalist>
+				</div>
+			</div>
+
+				<button class="btn modal__btn-submit">Save Location</button>
+			</form>
+		</div>
+
+		<script type="module" src="./src/scripts/app.js"></script>
+		<script type="module" src="./src/scripts/modal.js"></script>
+	</body>
 </html>
