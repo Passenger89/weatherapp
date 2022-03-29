@@ -30,6 +30,7 @@ body {
 .card,
 .info-container,
 .table-container,
+.modal-container,
 .modal {
   display: flex;
   justify-content: center;
@@ -52,9 +53,8 @@ body {
 .info-container {
   width: 90%;
   flex-basis: 50%;
-
-  display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 /*! -----
@@ -111,6 +111,24 @@ body {
  5. MODAL
 ----- */
 
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  opacity:  0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1
+}
+
 .modal {
   width: 25%;
   height: 50%;
@@ -118,9 +136,7 @@ body {
   background-color: antiquewhite;
   border: 2px solid #fff;
 
-  position: absolute;
-  top: 5%;
-  left: 15%;
+  position: relative;
 }
 
 .modal .form,
@@ -141,6 +157,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap:  1rem;
 }
 
 .modal .form input {

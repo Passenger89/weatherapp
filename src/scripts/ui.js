@@ -22,7 +22,6 @@ class UI {
     this.windDirection.textContent = compass(weather.wind["deg"]);
     this.windSpeed.textContent = weather.wind["speed"];
 	}
-
 }
 
 export default UI;
