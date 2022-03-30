@@ -3,7 +3,7 @@ import { countries } from './countryData.js'
 class Weather {
   constructor(city) {
     this.city = city
-    this.limit = 10
+    this.limit = 1
   }
 
   // Returns an object with weather related data of the city passed in
@@ -17,7 +17,6 @@ class Weather {
     return data
 
     if (data.cod === '404') {
-      this.showAlert('City not found', 'alert')
       alert('City not found')
     }
   }
