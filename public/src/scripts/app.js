@@ -27,3 +27,8 @@ function getWeather() {
     .then(results => ui.render(results))
     .catch(error => { weather.showAlert('City Not Found', 'alert'); console.log(error) })
 }
+
+// Change background color based on temperature
+const leftContainer = document.querySelector('.left-container')
+const temp = document.getElementById('temperature').textContent[0]
+temp <= 8 ? leftContainer.style.backgroundColor = '#486c93' : leftContainer.style.backgroundColor = '#F1CD6C';

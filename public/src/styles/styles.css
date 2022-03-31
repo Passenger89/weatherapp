@@ -70,6 +70,13 @@ body {
   overflow: hidden;
 }
 
+.left-container.cold {
+  background-color: #486c93;
+}
+.left-container.warm {
+background-color: #F1CD6C;
+}
+
 #temperature {
   font-family: "satisfy", "Open Sans", sans-serif;
   font-size: 3rem;

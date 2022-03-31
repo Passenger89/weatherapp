@@ -2,6 +2,7 @@ import compass from "./compass.js";
 
 class UI {
 	constructor() {
+		this.leftContainer = document.querySelector('.left-container')
 		this.location = document.getElementById('location')
 		this.description = document.getElementById('description')
 		this.temperature = document.getElementById('temperature')
@@ -15,7 +16,7 @@ class UI {
 	render(weather) {
 		this.location.textContent = `${weather.name}, ${weather.sys.country}`;
 		this.description.textContent = weather.weather[0].description;
-		this.temperature.textContent = (weather.main.temp - 273.15).toFixed(2) + ' °C';
+		this.temperature.textContent = (weather.main.temp - 273.15).toFixed(2) + '<span>°C</span>';
     this.icon.setAttribute('src', `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`)
     this.feelsLike.textContent = (weather.main["feels_like"] - 273.15).toFixed(2) + ' °C';
     this.visibility.textContent = weather.visibility;
