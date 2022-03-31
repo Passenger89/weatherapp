@@ -16,6 +16,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  color: whitesmoke;
 }
 
 .app-container {
@@ -23,15 +24,14 @@ body {
   place-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: deepskyblue;
+  background-color: #343e4b;
 
   position: relative;
 }
 
 .card,
-.info-table-container,
-.info-container,
-.table-container,
+.left-container,
+.right-container,
 .modal-container,
 .modal {
   display: flex;
@@ -40,54 +40,65 @@ body {
 }
 
 .card {
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
   min-width: 300px;
-  width:  40%;
-  height: 95%;
-  border-radius: 10px;
-  background-color: antiquewhite;
+  width:  80%;
+  height: 50%;
+  border-radius: 1rem;
+  background-color: #343e4b;
   overflow: hidden;
-}
-
-.info-table-container {
-  flex-direction: column;
-  width: 100%;
-  flex-basis: 90%;
+  position: relative;
 }
 
 /*! -----
  2. MAIN INFO
 ----- */
 
-.info-container {
-  width: 90%;
-  flex-basis: 50%;
+.left-container {
+  flex-basis: 40%;
+  height: 100%;
   flex-direction: column;
   gap: 1rem;
+  border:  1px solid whitesmoke;
+
+  border-radius: 1rem;
+  background-color: #486c93;
+  margin-right: -10px;
+  z-index: 99;
+
+  position: relative;
+  overflow: hidden;
+}
+
+#temperature {
+  font-family: "satisfy", "Open Sans", sans-serif;
+  font-size: 3rem;
 }
 
 /*! -----
  3. TABLE
 ----- */
 
-.table-container {
+.right-container {
+  flex-basis: 60%;
+  height: 97%;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #222834;
+  border:  1px solid whitesmoke;
+}
+
+.right-container table {
   width: 90%;
-  flex-basis: 40%;
-}
-
-.table-container table {
-  width: 100%;
   height: 100%;
-  text-align: center;
-  border: 1px solid white;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px #999;
-  border: 2px solid #fff;
+  font-size: 1.25rem;
 }
 
-.table-container table tr:nth-child(even) {
-  background-color: #f2f2f2;
+.right-container table tr td:nth-child(odd) {
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
 
 /*! -----
@@ -95,10 +106,10 @@ body {
 ----- */
 
 .btn {
-  background-color: deepskyblue;
+  background: linear-gradient(to right, #5ed6e5, #32408e);
   font-weight: bold;
   cursor: pointer;
-  color: floralwhite;
+  color:  inherit;
   border: none;
   border-radius: 10px;
   padding: 0.5rem 1rem;
@@ -114,7 +125,7 @@ body {
 }
 
 .btn-location {
-  margin-bottom: 1rem;
+  width: 45%;
 }
 
 /*! -----
@@ -130,6 +141,7 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
+  z-index: 100;
 
   transition: opacity 0.3s ease;
 }
@@ -142,9 +154,9 @@ body {
 .modal {
   min-width: 250px;
   width: 25%;
-  height: 50%;
+  height: 30%;
   border-radius: 10px;
-  background-color: antiquewhite;
+  background-color: #222834;
   border: 2px solid #fff;
 
   position: relative;
@@ -208,26 +220,29 @@ body {
   height: 3rem;
   background-color: red;
   color: #fff;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /*! -----
  7. MEDIA QUERIES
 ----- */
 
-@media (max-width: 750px) {
+
+@media (max-width: 600px) {
   .card {
+    flex-direction: column;
+    height: 90%;
+  }
+  .left-container {
     width: 90%;
+    padding: 1rem;
+    margin: 0;
   }
-}
-
-@media (orientation: portrait) {
-  .card {
-    height: 80%;
-  }
-}
-
-@media (orientation:  landscape) {
-  .info-container {
-    gap:  0;
+  .right-container {
+    flex-basis: 40%;
+    width: 100%;
   }
 }

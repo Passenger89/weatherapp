@@ -53,11 +53,11 @@ class Weather {
     // Add text
     div.appendChild(document.createTextNode(message))
     // Get parent
-    const card = document.querySelector('.card')
-    // Get info container
-    const infoTableContainer = document.querySelector('.info-table-container')
+    const leftContainer = document.querySelector('.left-container')
+    // Get location
+    const location = document.querySelector('#location')
     // Insert alert
-    card.insertBefore(div, infoTableContainer)
+    leftContainer.insertBefore(div, location)
 
     // Timeout after 3 seconds
     setTimeout(() => {
